@@ -1,0 +1,155 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+
+  --color-bg: #101014;
+  --color-surface: #1B1C24;
+  --color-surface-light: #242632;
+
+  --color-primary: #4D8DFF;
+  --color-secondary: #9B8AFF;
+
+  --color-text: #F4F4F8;
+  --color-muted: #92939F;
+  --color-border: rgba(255, 255, 255, 0.09);
+
+  --font-mono: 'DM Mono', monospace;
+
+  --container-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+.container {
+  width: min(100% - 48px, var(--container-width));
+  margin-inline: auto;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.navbar {
+  height: 76px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(16, 16, 20, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.navbar-logo span {
+  color: var(--color-primary);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.navbar-links a {
+  color: var(--color-muted);
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.navbar-links a:hover {
+  color: var(--color-primary);
+}
+
+.navbar-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.mobile-menu-button,
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .navbar-links,
+  .navbar-contact {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: 0;
+    color: var(--color-text);
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    background: #171923;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-menu a {
+    color: var(--color-text);
+    font-size: 14px;
+  }
+}
